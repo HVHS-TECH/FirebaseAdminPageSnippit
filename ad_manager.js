@@ -60,15 +60,17 @@ const DETAILS = "userdetails"
 
 
 // fb_readALL
-// Reconstituted from gl
+// For this to work you need an fb_readAll() function from the videos.
+// If you do not have the same fb_readAll() this might work for you
 // 
-function fb_readAll(_path,_something,_callback){
-    firebase.database().ref(_path).once('value', _doThis, fb_error);
-    function _doThis(snapshot){
-    _callback("OK","**PATH**",snapshot, "**save**","**error**");
-    }
-};
-
+/*
+function fb_readAll(_path,_something,_callback){                        //<=====
+    firebase.database().ref(_path).once('value', _doThis, fb_error);    //<=====
+    function _doThis(snapshot){                                         //<=====
+    _callback("OK","**PATH**",snapshot, "**save**","**error**");        //<=====
+    }                                                                   //<=====
+};                                                                      //<=====
+*/
 
 
 /**************************************************************/
@@ -693,7 +695,7 @@ function ad_clickEditCell(_tableId, _item, _path) {
 // Input:  path, key, field name, data & td object
 // Return: n/a
 /**************************************************************/
-function ad_dbUpdateRec(_path, _dbKey, _dbFieldName, _data, _td) {/*
+function ad_dbUpdateRec(_path, _dbKey, _dbFieldName, _data, _td) {
   console.log('%c ad_dbUpdateRec(): _path/_dbKey = ' + _path + '/' +
               _dbKey + ',  _dbFieldName = ' + _dbFieldName +
               ',  _data = ' + _data + '  _td = ' + _td,
@@ -711,7 +713,7 @@ function ad_dbUpdateRec(_path, _dbKey, _dbFieldName, _data, _td) {/*
       console.error('ad_dbUpdateRec(): Update failed for ' + _path +
                     '/' + _dbKey + ': ' + error.message);
       alert('Database write error; see console log for details');
-    });*/
+    });
 }
 
 /**************************************************************/
@@ -721,7 +723,7 @@ function ad_dbUpdateRec(_path, _dbKey, _dbFieldName, _data, _td) {/*
 // Input:  html table id, row & item number of firebase key and firebase path 
 // Return: n/a
 /**************************************************************/
-function ad_dbDelRec(_tableId, _row, _item, _path) {/*
+function ad_dbDelRec(_tableId, _row, _item, _path) {
   console.log('%c ad_dbDelRec(): _tableId/_row = ' + _tableId + '/' + _row +
               ',  _item = ' + _item + ',  _path = ' + _path,
               'color: ' + COLAD_C + '; background-color: ' + COLAD_B + ';');
@@ -741,7 +743,7 @@ function ad_dbDelRec(_tableId, _row, _item, _path) {/*
       console.error('ad_dbDelRec(): Remove failed for ' + _path + '/' +
                     key + ': ' + error.message);
       alert('Database delete error; see console log for details');
-    });*/
+    });
 }
 
 /**************************************************************/
@@ -751,14 +753,14 @@ function ad_dbDelRec(_tableId, _row, _item, _path) {/*
 // Input:  table id & row to delete
 // Return:
 /**************************************************************/
-function ad_delRow(_tableId, _row) {/*
+function ad_delRow(_tableId, _row) {
   console.log('%c ad_delRow(): _tableId/_row = ' + _tableId + '/' + _row,
               'color: ' + COLAD_C + '; background-color: ' + COLAD_B + ';');
 
   var i = _row.parentNode.parentNode.rowIndex;
   console.log('%c ad_delRow(): i = ' + i,
               'color: ' + COLAD_C + '; background-color: ' + COLAD_B + ';');
-  document.getElementById(_tableId).deleteRow(i);*/
+  document.getElementById(_tableId).deleteRow(i);
 }
 
 /**************************************************************/
@@ -768,7 +770,7 @@ function ad_delRow(_tableId, _row) {/*
 // Input:  table id
 // Return: n/a
 /**************************************************************/
-function ad_enterEvent(_tableId) {/*
+function ad_enterEvent(_tableId) {
   console.log('%c ad_enterEvent(): _tableId = ' + _tableId,
               'color: ' + COLAD_C + '; background-color: ' + COLAD_B + ';');
 
@@ -790,7 +792,7 @@ function ad_enterEvent(_tableId) {/*
         //document.getElementById(_tableId).deleteRow(2);
       }
     }
-  });*/
+  });
 }
 
 /**************************************************************/
