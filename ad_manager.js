@@ -58,7 +58,18 @@ console.log('%c ad_manager.js \n--------------------',
 //Database Paths
 const DETAILS = "userdetails"
 
-
+// fb_readALL
+// You need to have an fb_readALL function that works like this.
+// If you did not create on in your fb_io.js you can uncomment the function below.
+/*
+function fb_readAll(_path,_something,_callback){
+    firebase.database().ref(_path).once('value', _doThis, fb_error);
+    function _doThis(snapshot){
+    _callback("OK","**PATH**",snapshot, "**save**","**error**");
+    }
+};
+*/
+ 
 // fb_readALL
 // For this to work you need an fb_readAll() function from the videos.
 // If you do not have the same fb_readAll() this might work for you
